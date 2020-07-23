@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class DialogueMNG : MonoBehaviour
 {
-
-    public Text NameText;
     public Text DialogueText;
     private Queue<string> sentences;
     private string CurrentSentence;

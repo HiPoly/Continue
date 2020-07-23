@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 142ce42ca55f230459b32debabad1c6d
+guid: 4e568e94edad64042885e49f38e66619
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Cloister Black
+  fontName: Proclamate Light
   fontNames:
-  - Cloister Black
+  - Proclamate Light
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
