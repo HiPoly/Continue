@@ -9,18 +9,18 @@ public class DialogueMNG : MonoBehaviour
     public Text NameText;
     public Text DialogueText;
     private Queue<string> sentences;
+    private string CurrentSentence;
+    private int DisplayedChars;
 
     void Start()
     {
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(SentencePack sentencepack)
     {
-        //update textbox
-        NameText.text = dialogue.name;
         sentences.Clear();
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in sentencepack.Lines)
         {
             sentences.Enqueue(sentence);
         }
@@ -36,12 +36,18 @@ public class DialogueMNG : MonoBehaviour
         else
         {
             string sentence = sentences.Dequeue();
-            //update textbox
-            DialogueText.text = sentence;
+            DialogueText.text = "";
+            CurrentSentence = sentence;
+            DisplayedChars = 0;
         }
     }
 
-    //need to store the current sentence and update with typewriter effect
+    private void Update()
+    {
+        DisplayedChars = Mathf.Min(CurrentSentence.Length, DisplayedChars + 1);
+        DialogueText.text = CurrentSentence.Substring(0, DisplayedChars);
+        
+    }
 
     public void EndDialogue()
     {
