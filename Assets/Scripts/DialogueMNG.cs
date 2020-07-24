@@ -42,8 +42,11 @@ public class DialogueMNG : MonoBehaviour
 
     private void Update()
     {
-        DisplayedChars = Mathf.Min(CurrentSentence.Length, DisplayedChars + 1);
-        DialogueText.text = CurrentSentence.Substring(0, DisplayedChars);
+        if (!string.IsNullOrEmpty(CurrentSentence))
+        {
+            DisplayedChars = Mathf.Min(CurrentSentence.Length, DisplayedChars + 1);
+            DialogueText.text = CurrentSentence.Substring(0, DisplayedChars);
+        }
         
     }
 

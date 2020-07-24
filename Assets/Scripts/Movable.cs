@@ -13,8 +13,6 @@ public class Movable : MonoBehaviour
     private float startPosY;
     private bool held = false;
 
-
-
     void Update()
     {
         if (held == true)
@@ -25,11 +23,11 @@ public class Movable : MonoBehaviour
 
             if (xAble == true)
             {
-                this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 0);
+                this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, transform.position.y, 0);
             }
             else if (yAble == true)
             {
-                this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 0);
+                this.gameObject.transform.localPosition = new Vector3(transform.position.x, mousePos.y - startPosY, 0);
             }
         }
     }
