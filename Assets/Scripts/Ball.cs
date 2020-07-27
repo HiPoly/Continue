@@ -11,26 +11,27 @@ public class Ball : MonoBehaviour
     private float pauseTime = 0;
     private bool inPlay = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Launch()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (inPlay == false)
             {
                 inPlay = true;
                 rb.isKinematic = false;
                 rb.AddForce(new Vector3(LaunchSpeed, 0, 0));
+                foreach (var Movable in FindObjectsOfType<Movable>())
+                {
+                    Movable.LockGame();
+                }
             }
-
         }
     }
+
     private void OnCollisionEnter(Collision Collision)
     {
         if (Collision.gameObject.tag == "Sticky")

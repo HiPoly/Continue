@@ -23,14 +23,7 @@ public class Movable : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (movable == true)
-            {
-                movable = false;
-            }
-            else
-            {
-                movable = true;
-            }
+            SwitchLock();
         }
 
         if (movable == true)
@@ -51,9 +44,24 @@ public class Movable : MonoBehaviour
                 }
             }
         }
-
-
     }
+    public void SwitchLock()
+    {
+        if (movable == true)
+        {
+            movable = false;
+        }
+        else
+        {
+            movable = true;
+        }
+    }
+
+    public void LockGame()
+    {
+        movable = false;
+    }
+    
 
     private void OnMouseDown()
     {

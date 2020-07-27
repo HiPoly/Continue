@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueMNG : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class DialogueMNG : MonoBehaviour
     private Queue<string> sentences;
     private string CurrentSentence;
     private int DisplayedChars;
-
+    private string NextLevel;
+    
     void Start()
     {
         sentences = new Queue<string>();
@@ -23,6 +25,7 @@ public class DialogueMNG : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
+        NextLevel = sentencepack.NextLevel;
     }
 
     public void DisplayNextSentence()
@@ -48,12 +51,12 @@ public class DialogueMNG : MonoBehaviour
             DisplayedChars = Mathf.Min(CurrentSentence.Length, DisplayedChars + 1);
             DialogueText.text = CurrentSentence.Substring(0, DisplayedChars);
         }
-        
     }
 
     public void EndDialogue()
     {
         Debug.Log("Conversation Finished");
+        SceneManager.LoadScene(NextLevel);
     }
 }
 

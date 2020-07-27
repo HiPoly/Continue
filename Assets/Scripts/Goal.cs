@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
-    [SerializeField]
-    private string NextLevel;
-    private bool LevelWon = false;
+    private bool LevelWon;
 
     private void OnCollisionEnter(Collision Collision)
     {
@@ -16,11 +14,7 @@ public class Goal : MonoBehaviour
             //Destroy the ball
             Destroy(Collision.gameObject);
             LevelWon = true;
-            //start the dialogue (In Other Script)
-
-            //LoadtheNextLevel
-            SceneManager.LoadScene(NextLevel);
-            Debug.Log("I should be loading a level");
+            FindObjectOfType<DialogueTrigger>().TriggerDialogue();
 
         }
     }
