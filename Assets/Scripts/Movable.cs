@@ -5,52 +5,78 @@ using UnityEngine;
 public class Movable : MonoBehaviour
 {
     [SerializeField]
-    private bool xAble;
+    private bool xAble = false;
     [SerializeField]
-    private bool yAble;
+    private bool yAble = false;
 
     private float startPosX;
     private float startPosY;
     private bool held = false;
+    private bool movable = true;
+
+    [SerializeField]
+    private GameObject Limit1;
+    [SerializeField]
+    private GameObject Limit2;
 
     void Update()
     {
-        if (held == true)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Vector3 mousePos;
-            mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
-            if (xAble == true)
+            if (movable == true)
             {
-                this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, transform.position.y, 0);
+                movable = false;
             }
-            else if (yAble == true)
+            else
             {
-                this.gameObject.transform.localPosition = new Vector3(transform.position.x, mousePos.y - startPosY, 0);
+                movable = true;
             }
         }
+
+        if (movable == true)
+        {
+            if (held == true)
+            {
+                Vector3 mousePos;
+                mousePos = Input.mousePosition;
+                mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+                if (xAble == true)
+                {
+                    this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, transform.position.y, 0);
+                }
+                else if (yAble == true)
+                {
+                    this.gameObject.transform.localPosition = new Vector3(transform.position.x, mousePos.y - startPosY, 0);
+                }
+            }
+        }
+
+
     }
 
     private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (movable == true)
         {
-            Vector3 mousePos;
-            mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
-            if (xAble == true)
+            if (Input.GetMouseButtonDown(0))
             {
-                startPosX = mousePos.x - this.transform.localPosition.x;
-            }
+                Vector3 mousePos;
+                mousePos = Input.mousePosition;
+                mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-            else if (yAble == true)
-            {
-                startPosY = mousePos.y - this.transform.localPosition.y;
+                if (xAble == true)
+                {
+                    startPosX = mousePos.x - this.transform.localPosition.x;
+                }
+
+                else if (yAble == true)
+                {
+                    startPosY = mousePos.y - this.transform.localPosition.y;
+                }
+
+                held = true;
             }
-            
-            held = true;
         }
     }
 

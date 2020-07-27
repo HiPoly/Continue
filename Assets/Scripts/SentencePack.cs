@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SentencePack: ScriptableObject
 {
+    [TextArea(3, 10)]
     [SerializeField]
     public List<string> Lines;
 

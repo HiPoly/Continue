@@ -22,6 +22,7 @@ public class DialogueMNG : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+        DisplayNextSentence();
     }
 
     public void DisplayNextSentence()

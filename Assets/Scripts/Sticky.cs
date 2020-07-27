@@ -5,22 +5,24 @@ using UnityEngine;
 public class Sticky : MonoBehaviour
 {
     private Rigidbody rb;
+    [SerializeField]
+    private bool pauseTime;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider collider)
     {
-        
+        StartCoroutine(Stick());
     }
 
-    void OnTriggerEnter(Collider collider)
+    IEnumerator Stick()
     {
         rb.velocity = Vector3.zero;
         rb.useGravity = false;
+        //WaitForSeconds(pauseTime);
+        yield return null;
     }
 }
