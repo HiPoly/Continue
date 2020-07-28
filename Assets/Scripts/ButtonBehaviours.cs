@@ -21,7 +21,10 @@ public class ButtonBehaviours : MonoBehaviour
 
 
 
-
+    public void TestLevel1()
+    {
+        SceneManager.LoadScene("LevelTests");
+    }
 
 
 }

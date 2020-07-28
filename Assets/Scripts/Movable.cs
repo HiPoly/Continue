@@ -19,6 +19,9 @@ public class Movable : MonoBehaviour
     [SerializeField]
     private GameObject Limit2;
 
+    [SerializeField]
+    private GameObject Markers;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -44,10 +47,12 @@ public class Movable : MonoBehaviour
                 if (xAble == true)
                 {
                     this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, transform.position.y, 0);
+                    transform.position = new Vector3(Mathf.Clamp(mousePos.x - startPosX, Limit1.transform.position.x, Limit2.transform.position.x), transform.position.y, 0);
                 }
                 else if (yAble == true)
                 {
                     this.gameObject.transform.localPosition = new Vector3(transform.position.x, mousePos.y - startPosY, 0);
+                    transform.position = new Vector3(transform.position.x, Mathf.Clamp(mousePos.y - startPosY, Limit1.transform.position.y, Limit2.transform.position.y), 0);
                 }
             }
         }
@@ -61,6 +66,10 @@ public class Movable : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+
+
+                Markers.SetActive(true);
+
                 Vector3 mousePos;
                 mousePos = Input.mousePosition;
                 mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -84,6 +93,9 @@ public class Movable : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
+
+            Markers.SetActive(false);
+          
             held = false;
         }
 
