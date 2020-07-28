@@ -39,13 +39,11 @@ public class Movable : MonoBehaviour
 
                 if (xAble == true)
                 {
-                    this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, transform.position.y, 0);
-                    transform.position = new Vector3(Mathf.Clamp(mousePos.x - startPosX, Limit1.transform.position.x, Limit2.transform.position.x), transform.position.y, 0);
+                    transform.position = new Vector3(Mathf.Clamp(mousePos.x, Limit1.transform.position.x, Limit2.transform.position.x), transform.position.y, 0);
                 }
                 else if (yAble == true)
                 {
-                    this.gameObject.transform.localPosition = new Vector3(transform.position.x, mousePos.y - startPosY, 0);
-                    transform.position = new Vector3(transform.position.x, Mathf.Clamp(mousePos.y - startPosY, Limit1.transform.position.y, Limit2.transform.position.y), 0);
+                    transform.position = new Vector3(transform.position.x, Mathf.Clamp(mousePos.y, Limit1.transform.position.y, Limit2.transform.position.y), 0);
                 }
             }
         }
