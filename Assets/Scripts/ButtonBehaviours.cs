@@ -16,15 +16,12 @@ public class ButtonBehaviours : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(1);
     }
 
 
 
-    public void TestLevel1()
-    {
-        SceneManager.LoadScene("LevelTests");
-    }
+  
 
 
 }
