@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class DialogueOnStart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private bool TextStarted;
+    public void ButtonStart()
     {
-        FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+        if (TextStarted == false)
+        {
+            TextStarted = true;
+            FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+        }
+        
     }
 }

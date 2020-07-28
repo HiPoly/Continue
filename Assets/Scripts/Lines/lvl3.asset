@@ -16,3 +16,6 @@ MonoBehaviour:
   - I'm afraid I can't let you do this.
   - We all have a game over...
   - One. Last. Time.
+  - Good...
+  - This cannot continue.
+  NextLevel: Epilogue

@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2743af070b9dc074a881ecdf1722ddd6, type: 3}
   m_Name: Epilogue
   m_EditorClassIdentifier: 
-  Lines: []
+  Lines:
+  - It appears you failed at some game prior to this one.
+  - Don't let it get you down.
+  - You played this one quite well.
+  - But the important question is...
+  - Whether in this game or the next,
+  - Would you like to Continue?
+  NextLevel: TitleScreen

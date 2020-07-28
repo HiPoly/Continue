@@ -19,7 +19,7 @@ public class DialogueMNG : MonoBehaviour
 
     public void StartDialogue(SentencePack sentencepack)
     {
-        sentences.Clear();
+        //sentences.Clear();
         foreach (string sentence in sentencepack.Lines)
         {
             sentences.Enqueue(sentence);
@@ -38,7 +38,7 @@ public class DialogueMNG : MonoBehaviour
         else
         {
             string sentence = sentences.Dequeue();
-            DialogueText.text = "";
+            DialogueText.text = " ";
             CurrentSentence = sentence;
             DisplayedChars = 0;
         }
