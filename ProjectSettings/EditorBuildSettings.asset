@@ -9,15 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 5f89602caf6bf4a4a819063ecbd5a764
   - enabled: 1
-    path: Assets/Scenes/LevelTests 1.unity
-    guid: e376ae966ffa8054d8fb944c48894360
+    path: Assets/Scenes/Intro.unity
+    guid: 6f4685fea370ef74185cfd39a225c37b
   - enabled: 1
-    path: Assets/Scenes/LevelTests.unity
-    guid: 56eacf772e9832840966abb0e944ecd2
+    path: Assets/Scenes/lvl1.unity
+    guid: f8db45d0899bd2e4eb765c4830b3afd8
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/lvl2.unity
+    guid: 6210465ef070e854592f65b210a287fc
+  - enabled: 1
+    path: Assets/Scenes/lvl3.unity
+    guid: 7a9b6471a263b9646bd8c73cbed070e8
   - enabled: 1
     path: Assets/Scenes/Ending.unity
+    guid: 70570a76d3010c846983391f48ca895b
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/cdb86ac339fe0a949a51e6417744f028
     guid: cdb86ac339fe0a949a51e6417744f028
+  - enabled: 0
+    path: Assets/Scenes/LevelTests 1.unity
+    guid: e376ae966ffa8054d8fb944c48894360
+  - enabled: 0
+    path: Assets/Scenes/LevelTests.unity
+    guid: 56eacf772e9832840966abb0e944ecd2
+  - enabled: 0
+    path: Assets/Scenes/GameScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

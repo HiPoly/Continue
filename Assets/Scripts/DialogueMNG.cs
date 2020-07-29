@@ -19,7 +19,7 @@ public class DialogueMNG : MonoBehaviour
 
     public void StartDialogue(SentencePack sentencepack)
     {
-        //sentences.Clear();
+        sentences.Clear();
         foreach (string sentence in sentencepack.Lines)
         {
             sentences.Enqueue(sentence);
@@ -56,7 +56,10 @@ public class DialogueMNG : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("Conversation Finished");
-        SceneManager.LoadScene(NextLevel);
+        if (!string.IsNullOrEmpty(NextLevel))
+        {
+            SceneManager.LoadScene(NextLevel);
+        }
     }
 }
 
