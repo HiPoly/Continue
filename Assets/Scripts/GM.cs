@@ -16,6 +16,7 @@ public class GM : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1; 
+
     }
 
     // Update is called once per frame
@@ -41,12 +42,17 @@ public class GM : MonoBehaviour
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         GameIsPaused = true;
+        
     }
 
     //script the button calls to unpause
     public void UnPauseButton()
     {
         UnPauseMenu();
+        foreach (var Movable in FindObjectsOfType<Movable>())
+        {
+            Movable.UnLockGame();
+        }
     }
 
     //un-pause the game

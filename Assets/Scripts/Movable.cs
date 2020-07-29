@@ -13,6 +13,7 @@ public class Movable : MonoBehaviour
     private float startPosY;
     private bool held = false;
     private bool movable = true;
+    private bool gameinplay = false;
 
     [SerializeField]
     private GameObject Limit1;
@@ -24,10 +25,15 @@ public class Movable : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (gameinplay == false)
         {
-            SwitchLock();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SwitchLock();
+            }
         }
+        
 
         if (movable == true)
         {
@@ -63,8 +69,14 @@ public class Movable : MonoBehaviour
     public void LockGame()
     {
         movable = false;
+        gameinplay = true;
     }
     
+    public void UnLockGame()
+    {
+        movable = true;
+    }
+
 
     private void OnMouseDown()
     {

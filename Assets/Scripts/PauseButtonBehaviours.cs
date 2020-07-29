@@ -17,6 +17,8 @@ public class PauseButtonBehaviours : MonoBehaviour
     public void Continue()
     {
       GM.FindObjectOfType<GM>().UnPauseButton();
+
+      
     }
 
     //Retutn to title page, game doesn't get saved
